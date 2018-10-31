@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         self.playbackButton1.adjustMargin = 1
         self.playbackButton1.backgroundColor = UIColor.clear
         self.playbackButton1.setButtonColor(UIColor(hex: "2c3e50", alpha: 1.0))
-        self.playbackButton1.addTarget(self, action: #selector(ViewController.didTapPlaybackButton1(_:)), for: UIControlEvents.touchUpInside)
+        self.playbackButton1.addTarget(self, action: #selector(ViewController.didTapPlaybackButton1(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(self.playbackButton1)
         
         // playbackButton2
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     
-    func didTapPlaybackButton1(_ sender: AnyObject) {
+    @objc func didTapPlaybackButton1(_ sender: AnyObject) {
         if self.playbackButton1.buttonState == .playing {
             self.playbackButton1.setButtonState(.pausing, animated: true)
         } else if self.playbackButton1.buttonState == .pausing {

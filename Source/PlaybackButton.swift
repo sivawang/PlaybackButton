@@ -104,8 +104,8 @@ import UIKit
             animation.toValue = toValue
             animation.duration = self.playbackAnimationDuration
             animation.isRemovedOnCompletion = true
-            animation.fillMode = kCAFillModeForwards
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            animation.fillMode = CAMediaTimingFillMode.forwards
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             animation.delegate = self
             self.add(animation, forKey: PlaybackLayer.kAnimationIdentifier)
         } else {

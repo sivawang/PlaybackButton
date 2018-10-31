@@ -11,10 +11,10 @@ import Foundation
 extension String {
     
     var length: Int {
-        return self.characters.count
+        return self.count
     }
     
     func substring(_ from: Int) -> String {
-        return self.substring(from: self.characters.index(self.startIndex, offsetBy: from))
+        return String(self[self.index(self.startIndex, offsetBy: from)...])
     }
 }
